@@ -1,0 +1,17 @@
+version: '3'
+services:
+  zapusk:
+    build: .
+    environment:
+      - DISPLAY=${HOSTNAME}${DISPLAY}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    depends_on:
+      - influxDB
+
+  influxDB:
+    image: influxdb:latest
+    ports:
+      - '8086:8086'
+    environment:
+      - INFLUXDB_DB=eldata
