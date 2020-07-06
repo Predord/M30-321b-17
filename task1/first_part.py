@@ -44,7 +44,11 @@ class Writer:
         return [x for x in self._per]
 
     def write_to_bd(self):
+        if not self._per:
+            return
         self._bd.write_points(self._per)
+        self._per.clear()
+
 
 
 if __name__ == "__main__":

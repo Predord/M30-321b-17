@@ -1,7 +1,7 @@
 from matplotlib.animation import FuncAnimation
 import matplotlib.pyplot as plt
 
-from first_task import BD_API_influx
+from pisar import BD_API_influx
 
 
 def decor(bd: BD_API_influx):
@@ -29,7 +29,7 @@ def decor(bd: BD_API_influx):
 
 
 if __name__ == "__main__":
-    bd = BD_API_influx("influxDB", "eldata", "izmerenie")
+    bd = BD_API_influx("localhost", "eldata", "izmerenie1")
     ani = FuncAnimation(plt.gcf(), decor(bd), interval=1000)
     plt.tight_layout()
     plt.show()
