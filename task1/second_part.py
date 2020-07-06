@@ -1,7 +1,7 @@
 from matplotlib.animation import FuncAnimation
 import matplotlib.pyplot as plt
 
-from second_task import BD_API_influx
+from first_task import BD_API_influx
 
 
 def decor(bd: BD_API_influx):
