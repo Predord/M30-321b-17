@@ -3,7 +3,7 @@ import random
 import time
 
 from flask import Flask, request
-from pisar import Writer, BD_API_influx
+from first_task import Writer, BD_API_influx
 
 
 class glob_vars:
