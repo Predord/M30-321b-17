@@ -7,6 +7,12 @@ services:
     depends_on:
       - influxDB
 
+  mosquitto:
+    image: ansi/mosquitto
+    container_name: mosquitto
+    ports:
+      - 1883:1883
+
   influxDB:
     image: influxdb:latest
     ports:
