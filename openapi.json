@@ -1,0 +1,144 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "6 Task Kostik A. A.",
+    "version" : "1.0.0"
+  },
+  "servers" : [ {
+    "url" : "/"
+  } ],
+  "paths" : {
+    "/list" : {
+      "get" : {
+        "summary" : "Get values of variables and their count",
+        "responses" : {
+          "200" : {
+            "description" : "returns status with response code",
+            "content" : {
+              "text/html" : {
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/start" : {
+      "get" : {
+        "summary" : "Run proc writing to influx",
+        "responses" : {
+          "200" : {
+            "description" : "Status",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "OK"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/stop" : {
+      "get" : {
+        "summary" : "Stops proc",
+        "responses" : {
+          "200" : {
+            "description" : "Status",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "OK"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/start_mqtt" : {
+      "get" : {
+        "summary" : "Adds topic/var to listen from mqtt",
+        "parameters" : [ {
+          "name" : "tpc",
+          "in" : "query",
+          "description" : "topic name",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "var",
+          "in" : "query",
+          "description" : "variable name",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "OK"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/add" : {
+      "get" : {
+        "summary" : "Add var to simulation",
+        "parameters" : [ {
+          "name" : "name",
+          "in" : "query",
+          "description" : "name of variable that'll be add",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "beg",
+          "in" : "query",
+          "description" : "begin value",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Status",
+            "content" : {
+              "text/plain" : {
+                "schema" : {
+                  "type" : "string",
+                  "example" : "Added var_name:var_value"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : { }
+}

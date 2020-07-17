@@ -3,8 +3,8 @@ import random
 import time
 
 from flask import Flask, request
-from first_part import Writer, BD_API_influx
-from mqtt_reader import create_mqtt_reader
+from .first_part import Writer, BD_API_influx
+from .mqtt_reader import create_mqtt_reader
 
 
 class glob_vars:
