@@ -3,8 +3,8 @@ from datetime import datetime, timedelta
 from .db_req import RequestInflux
 
 DEFAULT_ADDRESS = 'localhost'
-DEFAULT_DATABASE = 'p1'
-DEFAULT_MEASURE_NAME = 'msn'
+DEFAULT_DATABASE = 'dtbs1'
+DEFAULT_MEASURE_NAME = 'measurenm'
 
 
 class AskToExit(Exception):
